@@ -124,6 +124,47 @@ optional arguments:
 
 ```
 
+
+### Strategies
+
+Each Strategy includes (But is not limited to):  
+
+- [x] **Minimal ROI**: Minimal ROI optimized for the strategy.
+- [x] **Stoploss**: Optimimal stoploss.
+- [x] **Buy signals**: Result from Hyperopt or based on exisiting trading strategies.
+- [x] **Sell signals**: Result from Hyperopt or based on exisiting trading strategies.
+- [x] **Indicators**: Includes the indicators required to run the strategy.
+
+Best backtest multiple strategies with the exchange and pairs you're interrested in, and finetune the strategy to the markets you're trading.
+
+### How to use the strategies
+
+Run the bot with the parameter `--strategy <STRATEGY CLASS NAME>` (ex: `freqtrade trade --strategy Strategy001`)
+
+More information [about backtesting](https://www.freqtrade.io/en/latest/backtesting/) and [strategy customization](https://www.freqtrade.io/en/latest/strategy-customization/).
+
+### Testing Strategies
+
+Let assume you have selected the strategy `strategy001.py`:
+
+#### Simple backtesting
+
+Run:
+
+```bash
+freqtrade backtesting --strategy Strategy001
+```
+Then:
+#### Refresh your test data
+
+```bash
+freqtrade download-data --days 100
+```
+
+*Note:* Generally, it's recommended to use static backtest data (from a defined period of time) for comparable results.
+
+Please check out the [official backtesting documentation](https://www.freqtrade.io/en/latest/backtesting/) for more information.
+
 ### Telegram RPC commands
 
 Telegram is not mandatory. However, this is a great way to control your bot. More details and the full command list on the [documentation](https://www.freqtrade.io/en/latest/telegram-usage/)
